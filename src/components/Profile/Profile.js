@@ -2,36 +2,38 @@
 
 // console.log(user);
 
-import { ProfileContainer, Avatar } from './Profile.styled';
+import { StatsLable, StatsValue, StatsItems, Stats, ProfileContainer, Avatar, Description, Container, Name, Tag, Location } from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes }}) => {
     return (
-        <ProfileContainer>
-            <div class="description">
+        <Container> 
+       <ProfileContainer> 
                 <Avatar
                     src={avatar}
                     alt="User avatar"
                     class="avatar"
-                />
-                <p class="name">{username}</p>
-                <p class="tag">{`${tag}`}</p>
-                <p class="location">{location}</p>
-            </div>
-
-            <ul class="stats">
-                <li>
-                    <span class="label">{followers}</span>
-                    <span class="quantity">1000</span>
-                </li>
-                <li>
-                    <span class="label">{views}</span>
-                    <span class="quantity">2000</span>
-                </li>
-                <li>
-                    <span class="label">{likes}</span>
-                    <span class="quantity">3000</span>
-                </li>
-            </ul>
-        </ProfileContainer>
+                    />
+                <Description>
+                    <Name>{username}</Name>
+                    <Tag> @{ tag }</Tag>
+                    <Location>{location}</Location>
+            </Description>
+    
+                <Stats>
+                    <StatsItems>
+                        <StatsLable>Followers</StatsLable>
+                        <StatsValue>{followers}</StatsValue>
+                    </StatsItems>
+                    <StatsItems>
+                        <StatsLable>Views</StatsLable>
+                        <StatsValue>{views}</StatsValue>
+                    </StatsItems>
+                    <StatsItems>
+                        <StatsLable>Likes</StatsLable>
+                        <StatsValue>{likes}</StatsValue>
+                    </StatsItems>
+                </Stats>
+            </ProfileContainer>
+        </Container>
     )
 }
