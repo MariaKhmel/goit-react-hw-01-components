@@ -7,7 +7,7 @@ import {
     Container
 } from './Statistics.styled'
 
-
+import PropTypes from 'prop-types'; 
 
 export const Stactics = ({ title, stats }) => {
     
@@ -26,4 +26,16 @@ export const Stactics = ({ title, stats }) => {
      </StatsSection>        
         </Container>
 )
+}
+
+Stactics.prototypes = {
+    title: PropTypes.string,
+    stats: PropTypes.arrayOf(
+        PropTypes.exact({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
+    })
+    )
+
 }
