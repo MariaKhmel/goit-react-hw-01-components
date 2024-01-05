@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { List, FriendStatus, FriendImg, FriendName } from './FriendsList.styled'
 
-export const FriendListItem = ({ avatar, name, isOnline }) => { 
+export const FriendListItem = ({ avatar, name, isonline }) => { 
     return (
      <List>
-     <FriendStatus isOnline={isOnline}/>     
+            <FriendStatus isonline={isonline}/>     
     <FriendImg src={avatar} alt={name} width="48" />  
    <FriendName>{name}</FriendName>       
         </List>
@@ -17,6 +17,6 @@ export const FriendListItem = ({ avatar, name, isOnline }) => {
 FriendListItem.prototypes = {
     avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    isOnline:PropTypes.bool.isRequired,
+    isonline:PropTypes.bool.isRequired,
 }
 

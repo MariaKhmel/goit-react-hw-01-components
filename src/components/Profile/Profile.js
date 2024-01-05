@@ -10,8 +10,7 @@ export const Profile = ({ username, tag, location, avatar, stats: { followers, v
        <ProfileContainer> 
                 <Avatar
                     src={avatar}
-                    alt="User avatar"
-                    class="avatar"
+                    alt={avatar}
                     />
                 <Description>
                     <Name>{username}</Name>
