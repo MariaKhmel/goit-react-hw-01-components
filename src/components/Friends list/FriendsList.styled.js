@@ -23,7 +23,7 @@ width: 10px;
 height: 10px;
 border-radius: 50%;
 margin-right :5px;
-background-color: ${({ isonline }) => isonline ? '#00b300': '#ff0000'};
+background-color: ${({ isOnline }) => isOnline ? '#00b300': '#ff0000'};
 `
 const FriendImg = styled.img`
 border:1px solid gray;
